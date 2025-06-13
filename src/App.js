@@ -3,6 +3,9 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, collection, onSnapshot, doc, getDoc, setDoc } from 'firebase/firestore';
 
+// Import Alyana's bio picture from your local assets folder
+    import alyanaProfilePic from './assets/A-cartoon.png'; // Adjust path if your folder structure is different
+
 //These values need tocome from Firebase once set up. or placed in config file srh. 
 const appId = process.env.REACT_APP_APP_ID || "PLACEHOLDER_APP_ID";
 const firebaseConfig = process.env.REACT_APP_FIREBASE_CONFIG
@@ -555,6 +558,15 @@ const AboutSection = () => {
         About Alayna's Artistic Journey
       </h2>
       <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-xl p-8 border-l-4 border-pink-500 text-left">
+        
+        {/* Always display the local image, as it's part of the app */}
+            <img
+              src={alyanaProfilePic} // Using the imported local image
+              alt="Alyana's Profile"
+              className="w-48 h-57 rounded-full object-cover shadow-lg mb-8 border-4 border-purple-300"
+              // No onError needed as local images are bundled, but harmless if kept
+            />
+            
         {artistInfo ? (
           <>
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
