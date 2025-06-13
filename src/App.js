@@ -3,7 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, collection, onSnapshot, doc, getDoc, setDoc } from 'firebase/firestore';
 
-//These values need tocome from Firbase once set up. srh. 
+//These values need tocome from Firebase once set up. or placed in config file srh. 
 const appId = process.env.REACT_APP_APP_ID || "PLACEHOLDER_APP_ID";
 const firebaseConfig = process.env.REACT_APP_FIREBASE_CONFIG
   ? JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG)
